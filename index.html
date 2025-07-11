@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sport Bra Resleting Depan | Bestbrand Shop</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'deep-sea': '#003366',
+                        'sea': '#0066cc',
+                        'sky': '#87ceeb',
+                        'foam': '#f0f8ff',
+                        'coral': '#ff6b6b',
+                    },
+                    fontFamily: {
+                        heading: ['Playfair Display', 'serif'],
+                        body: ['Inter', 'sans-serif'],
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .glassmorphism {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #003366 0%, #0066cc 50%, #87ceeb 100%);
+        }
+        .product-shadow {
+            box-shadow: 0 20px 30px rgba(0, 51, 102, 0.2);
+        }
+        .zoom-effect {
+            transition: transform 0.3s ease;
+        }
+        .zoom-effect:hover {
+            transform: scale(1.05);
+        }
+        .testimonial-card {
+            transition: all 0.3s ease;
+        }
+        .testimonial-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        .sticky-cta {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+        .sticky-cta.active {
+            transform: translateY(0);
+        }
+        .countdown-box {
+            animation: pulse-slow 2s infinite;
+        }
+        .color-option {
+            transition: all 0.2s ease;
+            border: 2px solid transparent;
+        }
+        .color-option.active, .color-option:hover {
+            border-color: #ff6b6b;
+            transform: scale(1.1);
+        }
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            background: linear-gradient(135deg, #87ceeb 0%, #f0f8ff 100%);
+            color: #003366;
+            font-size: 24px;
+        }
+        .order-form-container {
+            background: linear-gradient(135deg, rgba(0, 51, 102, 0.8) 0%, rgba(0, 102, 204, 0.8) 50%, rgba(135, 206, 235, 0.8) 100%);
+            border-radius: 20px;
+            overflow: hidden;
+        }
+        .order-form-container .ooef {
+            padding: 30px;
+        }
+        .order-form-container .ooef-loader {
+            background: rgba(255, 255, 255, 0.1);
+        }
+        .order-form-container .orderonline-embed-form {
+            background: transparent;
+            border: none;
+        }
+        .order-form-container input, .order-form-container select, .order-form-container textarea {
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid #87ceeb;
+            border-radius: 8px;
+            padding: 12px 15px;
+            width: 100%;
+            margin-bottom: 15px;
+            font-family: 'Inter', sans-serif;
+        }
+        .order-form-container button {
+            background: #ff6b6b;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 15px 20px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            font-size: 18px;
+        }
+        .order-form-container button:hover {
+            background: #e55a5a;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
+        }
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 90%;
+        }
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 40px;
+            cursor: pointer;
+        }
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: white;
+            font-size: 40px;
+            cursor: pointer;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 10px 20px;
+            border-radius: 50%;
+        }
+        .lightbox-prev {
+            left: 30px;
+        }
+        .lightbox-next {
+            right: 30px;
+        }
+        .exit-popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+        }
+        .popup-content {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            max-width: 500px;
+            text-align: center;
+            position: relative;
+        }
+        .popup-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 24px;
+            cursor: pointer;
+            color: #003366;
+        }
+        .hamburger {
+            display: none;
+            cursor: pointer;
+        }
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+            .nav-menu {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 70%;
+                height: 100vh;
+                background: #003366;
+                flex-direction: column;
+                padding-top: 80px;
+                transition: right 0.3s ease;
+                z-index: 100;
+            }
+            .nav-menu.active {
+                right: 0;
+            }
+            .nav-menu li {
+                margin: 15px 0;
+            }
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            .hero-content p {
+                font-size: 1rem;
+            }
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+            .testimonial-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body class="font-body text-gray-800 bg-foam">
+    <!-- Exit Intent Popup -->
+    <div class="exit-popup" id="exitPopup">
+        <div class="popup-content relative">
+            <span class="popup-close" id="closePopup">&times;</span>
+            <h3 class="font-heading text-2xl text-deep-sea mb-4">Tunggu Dulu!</h3>
+            <p class="mb-4">Dapatkan diskon spesial 15% untuk pembelian hari ini!</p>
+            <img src="https://cdn.orderonline.id/uploads/images_9639451752257575639.jpg" alt="Sport Bra Resleting Depan" class="w-48 mx-auto mb-4 rounded-lg">
+            <p class="font-bold text-xl mb-2">Hanya Rp 187.000 (dari Rp 249.000)</p>
+            <button class="gradient-bg text-white py-3 px-6 rounded-full font-bold text-lg mt-2 hover:opacity-90 transition" onclick="document.getElementById('orderForm').scrollIntoView({behavior: 'smooth'})">DAPATKAN DISKON</button>
+        </div>
+    </div>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <span class="lightbox-close" id="closeLightbox">&times;</span>
+        <span class="lightbox-nav lightbox-prev" id="prevLightbox">&#10094;</span>
+        <span class="lightbox-nav lightbox-next" id="nextLightbox">&#10095;</span>
+        <img class="lightbox-content" id="lightboxImage" src="" alt="Product Image">
+    </div>
+
+    <!-- Sticky CTA -->
+    <div class="sticky-cta bg-white py-3 px-4 shadow-lg" id="stickyCta">
+        <div class="container mx-auto flex justify-between items-center">
+            <div>
+                <p class="font-bold text-deep-sea">Sport Bra Resleting Depan</p>
+                <p class="text-coral font-bold">
+                    <span class="line-through text-gray-500">Rp 249.000</span> 
+                    <span class="text-xl">Rp 187.000</span>
+                </p>
+            </div>
+            <button class="gradient-bg text-white py-2 px-6 rounded-full font-bold hover:opacity-90 transition" onclick="document.getElementById('orderForm').scrollIntoView({behavior: 'smooth'})">BELI SEKARANG</button>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="fixed w-full z-50 bg-white shadow-md">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <span class="font-heading text-2xl font-bold text-deep-sea">Bestbrand Shop</span>
+            </div>
+            
+            <nav class="hidden md:block">
+                <ul class="flex space-x-8">
+                    <li><a href="#hero" class="text-deep-sea hover:text-sea font-medium">Beranda</a></li>
+                    <li><a href="#features" class="text-deep-sea hover:text-sea font-medium">Fitur</a></li>
+                    <li><a href="#gallery" class="text-deep-sea hover:text-sea font-medium">Galeri</a></li>
+                    <li><a href="#testimonials" class="text-deep-sea hover:text-sea font-medium">Testimoni</a></li>
+                    <li><a href="#orderForm" class="text-deep-sea hover:text-sea font-medium">Pesan</a></li>
+                </ul>
+            </nav>
+            
+            <div class="hamburger md:hidden">
+                <i class="fas fa-bars text-2xl text-deep-sea"></i>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <nav class="nav-menu">
+            <ul class="flex flex-col items-center">
+                <li class="mb-6"><a href="#hero" class="text-white text-xl">Beranda</a></li>
+                <li class="mb-6"><a href="#features" class="text-white text-xl">Fitur</a></li>
+                <li class="mb-6"><a href="#gallery" class="text-white text-xl">Galeri</a></li>
+                <li class="mb-6"><a href="#testimonials" class="text-white text-xl">Testimoni</a></li>
+                <li><a href="#orderForm" class="text-white text-xl">Pesan</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="pt-20 relative min-h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0">
+            <img src="https://cdn.orderonline.id/uploads/images_9639451752257575639.jpg" alt="Sport Bra Resleting Depan" class="w-full h-full object-cover">
+            <div class="absolute inset-0 gradient-bg opacity-80"></div>
+        </div>
+        
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="max-w-3xl mx-auto text-center text-white">
+                <h1 class="font-heading text-4xl md:text-6xl font-bold mb-6">Sport Bra Resleting Depan</h1>
+                <p class="text-xl mb-8">Nyaman & Stylish untuk Workout Setiap Hari</p>
+                
+                <div class="glassmorphism rounded-xl p-6 mb-8">
+                    <p class="text-3xl font-bold mb-2">Harga Spesial Hari Ini</p>
+                    <p class="text-4xl text-coral font-bold mb-2">Rp 187.000</p>
+                    <p class="line-through text-xl mb-4">Rp 249.000</p>
+                    <div class="countdown-box bg-white text-deep-sea py-2 px-4 rounded-lg inline-block">
+                        <p class="font-bold">BELI SEKARANG SEBELUM KEMBALI KE HARGA NORMAL <span id="countdown" class="text-coral"></span></p>
+                    </div>
+                </div>
+                
+                <a href="#orderForm" class="inline-block bg-coral text-white py-4 px-10 rounded-full font-bold text-xl hover:bg-red-500 transition transform hover:scale-105">BELI SEKARANG</a>
+                
+                <div class="mt-10 flex flex-wrap justify-center gap-4">
+                    <div class="flex items-center">
+                        <i class="fas fa-shipping-fast text-xl mr-2"></i>
+                        <span>Gratis Ongkir</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-shield-alt text-xl mr-2"></i>
+                        <span>Garansi 7 Hari</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-undo text-xl mr-2"></i>
+                        <span>Pengembalian Mudah</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Features -->
+    <section id="features" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="font-heading text-3xl md:text-4xl font-bold text-deep-sea mb-4">Kenapa Memilih Sport Bra Kami?</h2>
+                <p class="max-w-2xl mx-auto text-gray-600">Desain khusus untuk kenyamanan maksimal saat berolahraga</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="feature-icon mx-auto">
+                        <i class="fas fa-zipper"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-2">Resleting Depan</h3>
+                    <p class="text-gray-600">Mudah dipakai & dilepas dengan resleting depan</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="feature-icon mx-auto">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-2">Support Pas</h3>
+                    <p class="text-gray-600">Tidak sesak, tetap nyaman saat olahraga</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="feature-icon mx-auto">
+                        <i class="fas fa-wind"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-2">Bahan Adem</h3>
+                    <p class="text-gray-600">Cepat menyerap keringat dan nyaman dipakai</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="feature-icon mx-auto">
+                        <i class="fas fa-running"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-2">Multi-Aktivitas</h3>
+                    <p class="text-gray-600">Cocok untuk gym, yoga, lari, dan daily workout</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-20 bg-foam">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="font-heading text-3xl md:text-4xl font-bold text-deep-sea mb-4">Galeri Produk</h2>
+                <p class="max-w-2xl mx-auto text-gray-600">Lihat berbagai sisi dan warna sport bra resleting depan</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+                <div class="zoom-effect cursor-pointer" onclick="openLightbox('https://down-id.img.susercontent.com/file/c36d9d0c215ad256d4ce743213573dea.webp')">
+                    <img src="https://down-id.img.susercontent.com/file/c36d9d0c215ad256d4ce743213573dea.webp" alt="Sport Bra Resleting Depan" class="w-full h-80 object-cover rounded-xl shadow-lg">
+                </div>
+                <div class="zoom-effect cursor-pointer" onclick="openLightbox('https://down-id.img.susercontent.com/file/id-11134207-7rasc-m5w9c8h7ikd90f.webp')">
+                    <img src="https://down-id.img.susercontent.com/file/id-11134207-7rasc-m5w9c8h7ikd90f.webp" alt="Sport Bra Resleting Depan" class="w-full h-80 object-cover rounded-xl shadow-lg">
+                </div>
+                <div class="zoom-effect cursor-pointer" onclick="openLightbox('https://down-id.img.susercontent.com/file/id-11134207-7rasc-m5w9c8h7h5stf2.webp')">
+                    <img src="https://down-id.img.susercontent.com/file/id-11134207-7rasc-m5w9c8h7h5stf2.webp" alt="Sport Bra Resleting Depan" class="w-full h-80 object-cover rounded-xl shadow-lg">
+                </div>
+            </div>
+            
+            <div class="mb-16">
+                <h3 class="font-heading text-2xl font-bold text-deep-sea mb-6 text-center">Pilihan Warna</h3>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <div class="color-option cursor-pointer" onclick="selectColor(this)">
+                        <img src="https://down-id.img.susercontent.com/file/id-11134207-7quky-livhgpv75vva53.webp" alt="Warna Hitam" class="w-24 h-24 object-cover rounded-lg">
+                    </div>
+                    <div class="color-option cursor-pointer" onclick="selectColor(this)">
+                        <img src="https://down-id.img.susercontent.com/file/id-11134207-7qul8-livhgpv77afqdf.webp" alt="Warna Biru" class="w-24 h-24 object-cover rounded-lg">
+                    </div>
+                    <div class="color-option cursor-pointer" onclick="selectColor(this)">
+                        <img src="https://down-id.img.susercontent.com/file/id-11134207-7qula-livhgpv7eb9y97.webp" alt="Warna Merah" class="w-24 h-24 object-cover rounded-lg">
+                    </div>
+                    <div class="color-option cursor-pointer" onclick="selectColor(this)">
+                        <img src="https://down-id.img.susercontent.com/file/id-11134207-7qul7-livhgpv7cwpia6.webp" alt="Warna Abu-abu" class="w-24 h-24 object-cover rounded-lg">
+                    </div>
+                    <div class="color-option cursor-pointer" onclick="selectColor(this)">
+                        <img src="https://down-id.img.susercontent.com/file/id-11134207-7qukx-livhgpv7a3km9e.webp" alt="Warna Ungu" class="w-24 h-24 object-cover rounded-lg">
+                    </div>
+                    <div class="color-option cursor-pointer" onclick="selectColor(this)">
+                        <img src="https://down-id.img.susercontent.com/file/id-11134207-7qul3-livhgpv78p0674.webp" alt="Warna Hijau" class="w-24 h-24 object-cover rounded-lg">
+                    </div>
+                    <div class="color-option cursor-pointer" onclick="selectColor(this)">
+                        <img src="https://down-id.img.susercontent.com/file/id-11134207-7rasm-m3hh650qnoy712.webp" alt="Warna Pink" class="w-24 h-24 object-cover rounded-lg">
+                    </div>
+                </div>
+            </div>
+            
+            <div>
+                <h3 class="font-heading text-2xl font-bold text-deep-sea mb-6 text-center">Video Demo Produk</h3>
+                <div class="video-container">
+                    <iframe src="https://down-bs-sg.vod.susercontent.com/api/v4/11110105/mms/sg_e7a4bec9-e176-4e9a-84d4-45742581a11e_000237.16004111731806034.mp4" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="font-heading text-3xl md:text-4xl font-bold text-deep-sea mb-4">Apa Kata Pelanggan Kami?</h2>
+                <p class="max-w-2xl mx-auto text-gray-600">Ribuan wanita sudah merasakan kenyamanan sport bra kami</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="testimonial-card bg-foam p-6 rounded-xl shadow-md">
+                    <div class="flex items-center mb-4">
+                        <img src="https://i.pinimg.com/736x/b0/61/f6/b061f6c831450f00f78fe27ebfbb20ce.jpg" alt="Dessy Utami" class="w-16 h-16 rounded-full object-cover">
+                        <div class="ml-4">
+                            <h4 class="font-bold text-lg">Dessy Utami</h4>
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <video controls class="w-full rounded-lg">
+                            <source src="https://down-zl-sg.vod.susercontent.com/api/v4/11110103/mms/id_784808c4-029f-4564-af95-126dbb597fed_000464.16000081721974242.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <p class="text-gray-600 italic">"Saya sangat menyukainya. Ukurannya benar. Kualitas yang baik. Pelayanan penjual juga sangat baik!"</p>
+                </div>
+                
+                <div class="testimonial-card bg-foam p-6 rounded-xl shadow-md">
+                    <div class="flex items-center mb-4">
+                        <img src="https://i.pinimg.com/1200x/2b/7a/e6/2b7ae6d27c99e08ed01587e3556b8531.jpg" alt="Mia Slavina" class="w-16 h-16 rounded-full object-cover">
+                        <div class="ml-4">
+                            <h4 class="font-bold text-lg">Mia Slavina</h4>
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <img src="https://down-id.img.susercontent.com/file/id-11134103-7r991-lx2fhknk5vtn78.webp" alt="Testimonial" class="w-full rounded-lg">
+                    </div>
+                    <p class="text-gray-600 italic">"Paket sudah sampai, barang bagus real pict, suka banget.. terimakasih Seller dan Abang kurir 🙏"</p>
+                </div>
+                
+                <div class="testimonial-card bg-foam p-6 rounded-xl shadow-md">
+                    <div class="flex items-center mb-4">
+                        <img src="https://i.pinimg.com/1200x/6e/b3/70/6eb3703cd27081fe2970e7d19704f5ef.jpg" alt="Yulia.S" class="w-16 h-16 rounded-full object-cover">
+                        <div class="ml-4">
+                            <h4 class="font-bold text-lg">Yulia.S</h4>
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <img src="https://down-id.img.susercontent.com/file/id-11134103-22120-lw5yi1gnj7kv00.webp" alt="Testimonial" class="w-full rounded-lg">
+                    </div>
+                    <p class="text-gray-600 italic">"Sumpah suka banget sama bra nya.. buat aktifitas ini enak banget branya"</p>
+                </div>
+            </div>
+            
+            <div class="mt-16 bg-gradient-to-r from-sea to-sky text-white rounded-xl p-8 text-center">
+                <div class="max-w-3xl mx-auto">
+                    <h3 class="font-heading text-2xl font-bold mb-4">Lebih dari 5.000+ Pembeli Puas</h3>
+                    <div class="flex justify-center mb-6">
+                        <div class="text-center mx-8">
+                            <p class="text-4xl font-bold">4.9</p>
+                            <div class="flex justify-center text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p>Rating Produk</p>
+                        </div>
+                        <div class="text-center mx-8">
+                            <p class="text-4xl font-bold">98%</p>
+                            <p>Pelanggan Puas</p>
+                        </div>
+                    </div>
+                    <p class="italic">"Produk terbaik yang pernah saya beli untuk olahraga!" - Fitri, Pelanggan Setia</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Order Form Section -->
+    <section id="orderForm" class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="font-heading text-3xl md:text-4xl font-bold text-deep-sea mb-4">Pesan Sekarang!</h2>
+                <p class="max-w-2xl mx-auto text-gray-600">Dapatkan sport bra resleting depan dengan harga spesial hari ini</p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="order-form-container">
+                    <!-- OrderOnline Embed Code -->
+                    <div class="ooef">
+                        <form class="orderonline-embed-form" data-username="vera" data-product-slug="sport-bra-resleting-depan" data-product-id="687149170bfd692aba017640" id="oo-embed-form-sport-bra-resleting-depan-3599" data-origin="orderonline">
+                            <div class="ooef-loader"><style>.ooef-loader{visibility: hidden;opacity: 0;position: absolute;left: 0;right: 0;top: 0;bottom: 0;display: flex;justify-content: center;align-items: center;flex-direction: column;animation: ooLoadingIn 10s ease;-webkit-animation: ooLoadingIn 10s ease;animation-fill-mode: forwards;overflow: hidden}@keyframes ooLoadingIn{0%{visibility: hidden;opacity: 0}20%{visibility: visible;opacity: 0}100%{visibility: visible;opacity: 1}}@-webkit-keyframes ooLoadingIn{0%{visibility: hidden;opacity: 0}20%{visibility: visible;opacity: 0}100%{visibility: visible;opacity: 1}}.ooef-loader>div,.ooef-loader>div:after{border-radius: 50%;width: 2.5rem;height: 2.5rem}.ooef-loader>div{font-size: 10px;position: relative;text-indent: -9999em;border: .25rem solid #f5f5f5;border-left: .25rem solid #55c4cf;-webkit-transform: translateZ(0);-ms-transform: translateZ(0);transform: translateZ(0);-webkit-animation: ooLoading 1.1s infinite linear;animation: ooLoading 1.1s infinite linear}.ooef-loader.error>div{border-left: .25rem solid #ff4500;animation-duration: 5s}@-webkit-keyframes ooLoading{0%{-webkit-transform: rotate(0);transform: rotate(0)}100%{-webkit-transform: rotate(360deg);transform: rotate(360deg)}}@keyframes ooLoading{0%{-webkit-transform: rotate(0);transform: rotate(0)}100%{-webkit-transform: rotate(360deg);transform: rotate(360deg)}}</style><div aria-live="polite" role="status"><div>Loading...</div></div></div>
+                        </form>
+                    </div>
+                    <script>
+                        if (typeof xLogError != 'function') {
+                            var xLogError = function (error) {
+                                var req = new XMLHttpRequest();
+                                var payload = JSON.stringify({ url: document.location.href, line: error.line, stack: error.stack });
+                                var params = 'message=' + encodeURIComponent(error.name) + '&payload=' + encodeURIComponent(payload) + '&type=embed&level=error';
+                                req.open('POST', 'https://api.orderonline.id/log', true);
+                                req.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+                                req.send(params);
+                            };
+                        }
+                        try {
+                            if (typeof xEmbedScript != 'function') {
+                                var xEmbedScript = function () {
+                                    !function(w, d, e, v, id, t, s) {
+                                        if (d.getElementById(id)) return;
+                                        t = d.createElement(e);t.async = !0;t.src = v;t.id = id;
+                                        s = d.getElementsByTagName(e)[0];
+                                        s.parentNode.insertBefore(t, s);
+                                    }(window, document, 'script', 'https://cdn.orderonline.id/js/embed-v2-slim.min.js?v=8.0.4', 'oo-embed-js');
+                                };
+                            }
+                            if (typeof xEmbedInit != 'function') {
+                                var xEmbedInit = function (w, n) {
+                                    if (w.ooe) return;
+                                    n = w.ooe = function() {
+                                        n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+                                    };
+                                    if (!w._ooe) w._ooe = n;
+                                    n.push = n;n.loaded = !0;n.version = '8.0.4';n.queue = [];
+                                };
+                            }
+                            xEmbedInit(window);
+                            ooe('setup', 'redirect', 'https://vera.orderonline.id');
+                            ooe('init', '5f1a7807a9bf807d6c63d963', '687149170bfd692aba017640', '687149170bfd692aba017641', 'oo-embed-form-sport-bra-resleting-depan-3599', {"mode":"page","action":"Klik untuk pemesanan","title":"Form Pemesanan","triggerPixel":true,"triggerGtm":true});
+                            if (!window.jQuery) {
+                                !function(w, d, e, v, id, t, s) {
+                                    if (d.getElementById(id)) return;
+                                    t = d.createElement(e);t.async = !0;t.src = v;t.id = id;
+                                    t.addEventListener('load', xEmbedScript);
+                                    s = d.getElementsByTagName(e)[0];
+                                    s.parentNode.insertBefore(t, s);
+                                }(window, document, 'script', 'https://cdn.orderonline.id/js/vendor/jquery.min.js', 'oo-embed-jquery');
+                            } else {
+                                xEmbedScript();
+                            }
+                        } catch (e) {
+                            xLogError(e);
+                            throw e;
+                        }
+                    </script>
+                    <!-- End OrderOnline Embed Code -->
+                </div>
+                
+                <div class="mt-8 bg-white rounded-xl p-6 shadow-lg">
+                    <h3 class="font-bold text-xl text-deep-sea mb-4">Keamanan & Garansi</h3>
+                    <div class="flex flex-wrap justify-center gap-6">
+                        <div class="flex items-center">
+                            <i class="fas fa-lock text-2xl text-sea mr-3"></i>
+                            <span>Pembayaran Aman</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-shield-alt text-2xl text-sea mr-3"></i>
+                            <span>Data Terlindungi</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-undo text-2xl text-sea mr-3"></i>
+                            <span>Garansi 7 Hari</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-truck text-2xl text-sea mr-3"></i>
+                            <span>Gratis Ongkir</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20 bg-foam">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="font-heading text-3xl md:text-4xl font-bold text-deep-sea mb-4">Pertanyaan Umum</h2>
+                <p class="max-w-2xl mx-auto text-gray-600">Informasi penting yang perlu Anda ketahui</p>
+            </div>
+            
+            <div class="max-w-3xl mx-auto">
+                <div class="bg-white rounded-xl shadow-md mb-4 overflow-hidden">
+                    <button class="faq-question w-full text-left p-5 font-bold text-lg flex justify-between items-center">
+                        <span>Bagaimana cara memilih ukuran yang tepat?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer p-5 border-t hidden">
+                        <p>Kami menyediakan panduan ukuran lengkap di halaman produk. Umumnya, ukuran sport bra kami sesuai dengan ukuran bra biasa Anda. Jika Anda berada di antara dua ukuran, kami sarankan memilih ukuran yang lebih besar untuk kenyamanan maksimal.</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-md mb-4 overflow-hidden">
+                    <button class="faq-question w-full text-left p-5 font-bold text-lg flex justify-between items-center">
+                        <span>Berapa lama waktu pengiriman?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer p-5 border-t hidden">
+                        <p>Waktu pengiriman biasanya 2-5 hari kerja untuk wilayah Jawa dan 3-7 hari kerja untuk luar Jawa. Kami menggunakan jasa pengiriman terpercaya seperti JNE, J&T, dan SiCepat.</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-md mb-4 overflow-hidden">
+                    <button class="faq-question w-full text-left p-5 font-bold text-lg flex justify-between items-center">
+                        <span>Apakah produk ini bisa dikembalikan?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer p-5 border-t hidden">
+                        <p>Ya, kami memberikan garansi kepuasan 30 hari. Jika Anda tidak puas dengan produk, Anda dapat mengembalikannya dalam kondisi belum dicuci dan dengan tag masih terpasang untuk pengembalian dana penuh.</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-md mb-4 overflow-hidden">
+                    <button class="faq-question w-full text-left p-5 font-bold text-lg flex justify-between items-center">
+                        <span>Bagaimana cara perawatan sport bra ini?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer p-5 border-t hidden">
+                        <p>Kami menyarankan mencuci dengan tangan menggunakan air dingin dan deterjen lembut. Jangan menggunakan pemutih atau pengering mesin. Keringkan dengan cara diangin-anginkan di tempat teduh.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-deep-sea text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="font-heading text-xl font-bold mb-4">Bestbrand Shop</h3>
+                    <p class="mb-4">Menyediakan produk fashion berkualitas tinggi dengan harga terbaik untuk wanita modern.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-2xl hover:text-sky"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-2xl hover:text-sky"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-2xl hover:text-sky"><i class="fab fa-tiktok"></i></a>
+                        <a href="#" class="text-2xl hover:text-sky"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="font-bold text-lg mb-4">Tautan Cepat</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-sky">Tentang Kami</a></li>
+                        <li><a href="#" class="hover:text-sky">Produk Lainnya</a></li>
+                        <li><a href="#" class="hover:text-sky">Blog</a></li>
+                        <li><a href="#" class="hover:text-sky">Karir</a></li>
+                        <li><a href="#" class="hover:text-sky">Kontak</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="font-bold text-lg mb-4">Bantuan</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-sky">Pusat Bantuan</a></li>
+                        <li><a href="#" class="hover:text-sky">Cara Pemesanan</a></li>
+                        <li><a href="#" class="hover:text-sky">Pengembalian</a></li>
+                        <li><a href="#" class="hover:text-sky">Kebijakan Privasi</a></li>
+                        <li><a href="#" class="hover:text-sky">Syarat & Ketentuan</a></li>
+                    </ul>
+                </div>
+                
+                
+            </div>
+            
+            <div class="border-t border-sea mt-12 pt-6 text-center">
+                <p>&copy; 2025 Bestbrand Shop. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Countdown Timer
+        function updateCountdown() {
+            const countdownElement = document.getElementById('countdown');
+            let time = 10 * 60 * 60; // 10 hours in seconds
+            
+            setInterval(() => {
+                if (time <= 0) return;
+                
+                time--;
+                
+                const hours = Math.floor(time / 3600);
+                const minutes = Math.floor((time % 3600) / 60);
+                const seconds = time % 60;
+                
+                countdownElement.textContent = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            }, 1000);
+        }
+        
+        // Sticky CTA
+        function handleStickyCta() {
+            const stickyCta = document.getElementById('stickyCta');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 500) {
+                    stickyCta.classList.add('active');
+                } else {
+                    stickyCta.classList.remove('active');
+                }
+            });
+        }
+        
+        // Lightbox functionality
+        const lightboxImages = [
+            'https://down-id.img.susercontent.com/file/c36d9d0c215ad256d4ce743213573dea.webp',
+            'https://down-id.img.susercontent.com/file/id-11134207-7rasc-m5w9c8h7ikd90f.webp',
+            'https://down-id.img.susercontent.com/file/id-11134207-7rasc-m5w9c8h7h5stf2.webp'
+        ];
+        
+        let currentImageIndex = 0;
+        
+        function openLightbox(src) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImage = document.getElementById('lightboxImage');
+            
+            currentImageIndex = lightboxImages.indexOf(src);
+            lightboxImage.src = src;
+            lightbox.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+        
+        function navigateLightbox(direction) {
+            currentImageIndex += direction;
+            
+            if (currentImageIndex < 0) {
+                currentImageIndex = lightboxImages.length - 1;
+            } else if (currentImageIndex >= lightboxImages.length) {
+                currentImageIndex = 0;
+            }
+            
+            document.getElementById('lightboxImage').src = lightboxImages[currentImageIndex];
+        }
+        
+        // Color selection
+        function selectColor(element) {
+            document.querySelectorAll('.color-option').forEach(el => {
+                el.classList.remove('active');
+            });
+            element.classList.add('active');
+        }
+        
+        // FAQ accordion
+        function setupFaq() {
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', () => {
+                    const answer = question.nextElementSibling;
+                    const icon = question.querySelector('i');
+                    
+                    if (answer.classList.contains('hidden')) {
+                        answer.classList.remove('hidden');
+                        icon.classList.remove('fa-chevron-down');
+                        icon.classList.add('fa-chevron-up');
+                    } else {
+                        answer.classList.add('hidden');
+                        icon.classList.remove('fa-chevron-up');
+                        icon.classList.add('fa-chevron-down');
+                    }
+                });
+            });
+        }
+        
+        // Mobile menu toggle
+        function setupMobileMenu() {
+            const hamburger = document.querySelector('.hamburger');
+            const navMenu = document.querySelector('.nav-menu');
+            
+            hamburger.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+            });
+            
+            // Close menu when clicking a link
+            document.querySelectorAll('.nav-menu a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navMenu.classList.remove('active');
+                });
+            });
+        }
+        
+        // Smooth scrolling
+        function setupSmoothScrolling() {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        }
+        
+        // Exit intent popup
+        function setupExitIntent() {
+            let mouseY = 0;
+            
+            document.addEventListener('mouseout', (e) => {
+                if (!e.toElement && !e.relatedTarget && e.clientY < mouseY && e.clientY < 10) {
+                    document.getElementById('exitPopup').style.display = 'flex';
+                    document.body.style.overflow = 'hidden';
+                }
+                mouseY = e.clientY;
+            });
+            
+            document.getElementById('closePopup').addEventListener('click', () => {
+                document.getElementById('exitPopup').style.display = 'none';
+                document.body.style.overflow = 'auto';
+            });
+        }
+        
+        // Initialize everything
+        document.addEventListener('DOMContentLoaded', () => {
+            updateCountdown();
+            handleStickyCta();
+            setupFaq();
+            setupMobileMenu();
+            setupSmoothScrolling();
+            setupExitIntent();
+            
+            // Lightbox event listeners
+            document.getElementById('closeLightbox').addEventListener('click', closeLightbox);
+            document.getElementById('prevLightbox').addEventListener('click', () => navigateLightbox(-1));
+            document.getElementById('nextLightbox').addEventListener('click', () => navigateLightbox(1));
+            
+            // Close lightbox when clicking outside
+            document.getElementById('lightbox').addEventListener('click', (e) => {
+                if (e.target === document.getElementById('lightbox')) {
+                    closeLightbox();
+
+</body>
+</html>
